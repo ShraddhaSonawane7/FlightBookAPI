@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "CqbPF+zfuy5mzBWpPiCaMUzECb5ij5eKWiLl+/4i3Wg=",
+  "Source": "FlightBookAPI",
+  "BasePath": "_content/FlightBookAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
