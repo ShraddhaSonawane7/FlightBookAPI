@@ -3,48 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\models\\flightdemocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\models\\flightdemocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\models\\checkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\models\\checkin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\interfaces\\ipayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\interfaces\\ipayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\flightbookapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\flightbookapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\authentication\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\authentication\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\authentication\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\authentication\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\interfaces\\icheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\interfaces\\icheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\repositories\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\interfaces\\ibooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\interfaces\\ibooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|c:\\users\\sdipak\\source\\repos\\flightbookapi\\flightbookapi\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FCD4503-FE4E-48E0-AE8C-CD88D2D38FB3}|FlightBookAPI\\FlightBookAPI.csproj|solutionrelative:flightbookapi\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,29 +46,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Flight.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\Flight.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Models\\Flight.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\Flight.cs",
-              "RelativeToolTip": "FlightBookAPI\\Models\\Flight.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "FlightBookAPI\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "FlightBookAPI\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:05:44.822Z",
+              "WhenOpened": "2025-03-17T08:02:53.449Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FlightDemoContext.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\FlightDemoContext.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Models\\FlightDemoContext.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\FlightDemoContext.cs",
-              "RelativeToolTip": "FlightBookAPI\\Models\\FlightDemoContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "BookingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Repositories\\BookingRepository.cs",
+              "RelativeDocumentMoniker": "FlightBookAPI\\Repositories\\BookingRepository.cs",
+              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Repositories\\BookingRepository.cs",
+              "RelativeToolTip": "FlightBookAPI\\Repositories\\BookingRepository.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAqwD0AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:04:45.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T05:58:21.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IBooking.cs",
+              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IBooking.cs",
+              "RelativeDocumentMoniker": "FlightBookAPI\\Interfaces\\IBooking.cs",
+              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IBooking.cs",
+              "RelativeToolTip": "FlightBookAPI\\Interfaces\\IBooking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T09:40:50.959Z"
             },
             {
               "$type": "Document",
@@ -106,114 +89,9 @@
               "RelativeDocumentMoniker": "FlightBookAPI\\Models\\Booking.cs",
               "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\Booking.cs",
               "RelativeToolTip": "FlightBookAPI\\Models\\Booking.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCUAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T07:19:06.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IPayment.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IPayment.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Interfaces\\IPayment.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IPayment.cs",
-              "RelativeToolTip": "FlightBookAPI\\Interfaces\\IPayment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:14:57.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FlightBookAPI.http",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\FlightBookAPI.http",
-              "RelativeDocumentMoniker": "FlightBookAPI\\FlightBookAPI.http",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\FlightBookAPI.http",
-              "RelativeToolTip": "FlightBookAPI\\FlightBookAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-03-10T15:55:20.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CheckIn.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\CheckIn.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Models\\CheckIn.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Models\\CheckIn.cs",
-              "RelativeToolTip": "FlightBookAPI\\Models\\CheckIn.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:10:39.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Response.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Authentication\\Response.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Authentication\\Response.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Authentication\\Response.cs",
-              "RelativeToolTip": "FlightBookAPI\\Authentication\\Response.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:35:18.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Authentication\\LoginModel.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Authentication\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Authentication\\LoginModel.cs",
-              "RelativeToolTip": "FlightBookAPI\\Authentication\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:35:11.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ICheckIn.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\ICheckIn.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Interfaces\\ICheckIn.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\ICheckIn.cs",
-              "RelativeToolTip": "FlightBookAPI\\Interfaces\\ICheckIn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:14:36.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IBooking.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IBooking.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Interfaces\\IBooking.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Interfaces\\IBooking.cs",
-              "RelativeToolTip": "FlightBookAPI\\Interfaces\\IBooking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:14:27.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PaymentsController.cs",
-              "DocumentMoniker": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Controllers\\PaymentsController.cs",
-              "RelativeDocumentMoniker": "FlightBookAPI\\Controllers\\PaymentsController.cs",
-              "ToolTip": "C:\\Users\\SDIPAK\\source\\repos\\FlightBookAPI\\FlightBookAPI\\Controllers\\PaymentsController.cs",
-              "RelativeToolTip": "FlightBookAPI\\Controllers\\PaymentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T05:13:31.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T09:26:26.425Z"
             }
           ]
         }

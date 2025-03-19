@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "AuthController",
+    "ContainingType": "FlightBookAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuthController",
+    "ContainingType": "FlightBookAPI.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
@@ -32,13 +32,34 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FlightBookAPI.Controllers.BookingsController",
-    "Method": "BookFlight",
-    "RelativePath": "api/Bookings/book",
-    "HttpMethod": "POST",
+    "ContainingType": "FlightBookAPI.Controllers.BookingController",
+    "Method": "GetBookingById",
+    "RelativePath": "api/Booking/{bookingId}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightBookAPI.Controllers.BookingController",
+    "Method": "UpdateBooking",
+    "RelativePath": "api/Booking/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
       {
         "Name": "booking",
         "Type": "FlightBookAPI.Models.Booking",
@@ -48,25 +69,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FlightBookAPI.Controllers.BookingsController",
-    "Method": "GetBookingByReference",
-    "RelativePath": "api/Bookings/reference/{referenceNumber}",
-    "HttpMethod": "GET",
+    "ContainingType": "FlightBookAPI.Controllers.BookingController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/Booking/cancel/{bookingId}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "referenceNumber",
-        "Type": "System.String",
+        "Name": "bookingId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FlightBookAPI.Controllers.BookingsController",
-    "Method": "GetBookingsByUser",
-    "RelativePath": "api/Bookings/user/{userId}",
+    "ContainingType": "FlightBookAPI.Controllers.BookingController",
+    "Method": "ConfirmBooking",
+    "RelativePath": "api/Booking/confirm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingRequest",
+        "Type": "FlightBookAPI.Models.Booking",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightBookAPI.Controllers.BookingController",
+    "Method": "GetUserBookings",
+    "RelativePath": "api/Booking/user/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

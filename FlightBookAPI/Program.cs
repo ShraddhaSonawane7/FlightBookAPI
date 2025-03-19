@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using JWTAuthentication.Authentication;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,14 +18,12 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<FlightDemoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FlightBookingDbConnection")));
 
-// Configure Identity (if needed)
+// Configure Identity (if using Identity)
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<FlightDemoContext>()
     .AddDefaultTokenProviders();
 
 // Configure JWT Authentication
-var key = Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]); // ? FIXED PATH
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,13 +38,15 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWT:ValidAudience"],
-        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(key)
+        ValidAudience = builder.Configuration["JWT:ValidAudience"],  // ? Ensure this is correct
+        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],  // ? Ensure this is correct
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+        RoleClaimType = ClaimTypes.Role  // ? Ensure roles are validated correctly
     };
 });
 
-// Add repositories to DI
+
+// Add repositories to Dependency Injection (DI)
 builder.Services.AddTransient<IUser, UserRepository>();
 builder.Services.AddTransient<IFlight, FlightRepository>();
 builder.Services.AddTransient<IBooking, BookingRepository>();
@@ -80,7 +81,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("AllowSpecificOrigin");
 
-app.UseAuthentication();
+app.UseAuthentication();  // Ensure this is placed before UseAuthorization
 app.UseAuthorization();
 
 app.MapControllers();

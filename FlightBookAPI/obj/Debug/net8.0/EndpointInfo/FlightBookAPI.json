@@ -67,10 +67,33 @@
         }
       }
     },
-    "/api/Bookings/book": {
+    "/api/Booking/{bookingId}": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/confirm": {
       "post": {
         "tags": [
-          "Bookings"
+          "Booking"
         ],
         "requestBody": {
           "content": {
@@ -98,10 +121,10 @@
         }
       }
     },
-    "/api/Bookings/user/{userId}": {
+    "/api/Booking/user/{userId}": {
       "get": {
         "tags": [
-          "Bookings"
+          "Booking"
         ],
         "parameters": [
           {
@@ -121,21 +144,64 @@
         }
       }
     },
-    "/api/Bookings/reference/{referenceNumber}": {
-      "get": {
+    "/api/Booking/cancel/{bookingId}": {
+      "delete": {
         "tags": [
-          "Bookings"
+          "Booking"
         ],
         "parameters": [
           {
-            "name": "referenceNumber",
+            "name": "bookingId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/{id}": {
+      "put": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Booking"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Booking"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Booking"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -519,10 +585,6 @@
             "type": "string",
             "nullable": true
           },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
           "bookingDate": {
             "type": "string",
             "format": "date-time",
@@ -547,30 +609,6 @@
           "totalPrice": {
             "type": "number",
             "format": "double"
-          },
-          "paymentStatus": {
-            "type": "string",
-            "nullable": true
-          },
-          "checkIns": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CheckIn"
-            },
-            "nullable": true
-          },
-          "flight": {
-            "$ref": "#/components/schemas/Flight"
-          },
-          "payments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Payment"
-            },
-            "nullable": true
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
           }
         },
         "additionalProperties": false

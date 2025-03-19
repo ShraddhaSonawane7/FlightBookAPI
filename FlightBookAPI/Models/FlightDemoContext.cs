@@ -35,7 +35,11 @@ public partial class FlightDemoContext : DbContext
         {
             entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951AED2890ED52");
 
-            entity.ToTable(tb => tb.HasTrigger("trg_generate_reference"));
+            entity.ToTable(tb =>
+                {
+                    tb.HasTrigger("trg_generate_reference");
+                    tb.HasTrigger("trg_generate_referenceNo");
+                });
 
             entity.HasIndex(e => e.ReferenceNumber, "UQ_ReferenceNumber").IsUnique();
 
@@ -49,24 +53,11 @@ public partial class FlightDemoContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasDefaultValue("Economy");
-            entity.Property(e => e.PaymentStatus)
-                .HasMaxLength(20)
-                .IsUnicode(false)
-                .HasDefaultValue("Pending");
-            entity.Property(e => e.ReferenceNumber).HasMaxLength(20);
+            entity.Property(e => e.ReferenceNumber).HasMaxLength(50);
             entity.Property(e => e.SeatType).HasMaxLength(50);
-            entity.Property(e => e.Status)
-                .HasMaxLength(50)
-                .HasDefaultValue("Booked");
             entity.Property(e => e.TotalPrice).HasColumnType("decimal(10, 2)");
 
-            entity.HasOne(d => d.Flight).WithMany(p => p.Bookings)
-                .HasForeignKey(d => d.FlightId)
-                .HasConstraintName("FK__Bookings__Flight__45F365D3");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Bookings)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Bookings__UserId__44FF419A");
+           
         });
 
         modelBuilder.Entity<CheckIn>(entity =>
@@ -83,9 +74,7 @@ public partial class FlightDemoContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.SeatNumber).HasMaxLength(10);
 
-            entity.HasOne(d => d.Booking).WithMany(p => p.CheckIns)
-                .HasForeignKey(d => d.BookingId)
-                .HasConstraintName("FK__CheckIns__Bookin__4CA06362");
+           
         });
 
         modelBuilder.Entity<Flight>(entity =>
@@ -124,9 +113,7 @@ public partial class FlightDemoContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
-            entity.HasOne(d => d.Booking).WithMany(p => p.Payments)
-                .HasForeignKey(d => d.BookingId)
-                .HasConstraintName("FK__Payments__Bookin__534D60F1");
+           
 
             entity.HasOne(d => d.User).WithMany(p => p.Payments)
                 .HasForeignKey(d => d.UserId)

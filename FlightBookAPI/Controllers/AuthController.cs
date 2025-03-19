@@ -7,96 +7,105 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using FlightBookAPI.Models;
+using System.Collections.Generic;
 
-[Route("api/auth")]
-[ApiController]
-public class AuthController : ControllerBase
+namespace FlightBookAPI.Controllers
 {
-    private readonly IUser _userRepository;
-    private readonly IConfiguration _configuration;
-
-    public AuthController(IUser userRepository, IConfiguration configuration)
+    [Route("api/auth")]
+    [ApiController]
+    public class AuthController : ControllerBase
     {
-        _userRepository = userRepository;
-        _configuration = configuration;
-    }
+        private readonly IUser _userRepository;
+        private readonly IConfiguration _configuration;
 
-    // ✅ Passenger Registration
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] User model)
-    {
-        if (await _userRepository.GetUserByEmailAsync(model.Email) != null)
+        public AuthController(IUser userRepository, IConfiguration configuration)
         {
-            return BadRequest(new { message = "Email already exists." });
+            _userRepository = userRepository;
+            _configuration = configuration;
         }
 
-        // Hash the password before saving
-        model.PasswordHash = HashPassword(model.PasswordHash);
-        model.Role = "Passenger"; // ✅ Assign Passenger role
-
-        await _userRepository.AddUserAsync(model);
-        return Ok(new { message = "Passenger registered successfully!" });
-    }
-
-    // ✅ User Login (Admin & Passenger)
-    [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel model)
-    {
-        if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
+        // ✅ Passenger Registration
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] User model)
         {
-            return BadRequest(new { message = "Email and password are required." });
+            if (await _userRepository.GetUserByEmailAsync(model.Email) != null)
+            {
+                return BadRequest(new { message = "Email already exists." });
+            }
+
+            // Hash the password before saving
+            model.PasswordHash = HashPassword(model.PasswordHash);
+            model.Role = "Passenger"; // ✅ Assign Passenger role
+
+            await _userRepository.AddUserAsync(model);
+            return Ok(new { message = "Passenger registered successfully!" });
         }
 
-        var user = await _userRepository.GetUserByEmailAsync(model.Email);
-
-        if (user == null)
+        // ✅ User Login (Admin & Passenger)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            return Unauthorized(new { message = "Invalid credentials." });
+            if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
+            {
+                return BadRequest(new { message = "Email and password are required." });
+            }
+
+            var user = await _userRepository.GetUserByEmailAsync(model.Email);
+
+            if (user == null)
+            {
+                return Unauthorized(new { message = "Invalid credentials." });
+            }
+
+            // Hash the input password using SHA-256
+            string hashedInputPassword = HashPassword(model.Password);
+
+            if (user.PasswordHash != hashedInputPassword)  // Compare with DB hash
+            {
+                return Unauthorized(new { message = "Invalid credentials." });
+            }
+
+            // Generate JWT Token
+            var token = GenerateJwtToken(user);
+            return Ok(new { token });
         }
 
-        // Hash the input password using SHA-256
-        string hashedInputPassword = HashPassword(model.Password);
-
-        if (user.PasswordHash != hashedInputPassword)  // Compare with DB hash
+        // ✅ JWT Token Generation
+        private string GenerateJwtToken(User user)
         {
-            return Unauthorized(new { message = "Invalid credentials." });
+            var key = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]);
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+        new Claim(ClaimTypes.Email, user.Email),
+        new Claim(ClaimTypes.Role, user.Role),
+        new Claim(JwtRegisteredClaimNames.Aud, _configuration["JWT:ValidAudience"]), // ✅ Add audience claim
+        new Claim(JwtRegisteredClaimNames.Iss, _configuration["JWT:ValidIssuer"]) // ✅ Add issuer claim
+    };
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(2),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Issuer = _configuration["JWT:ValidIssuer"],  // ✅ Ensure issuer is set
+                Audience = _configuration["JWT:ValidAudience"] // ✅ Ensure audience is set
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
 
-        // Generate JWT Token
-        var token = GenerateJwtToken(user);
-        return Ok(new { token });
-    }
 
-    // ✅ JWT Token Generation
-    private string GenerateJwtToken(User user)
-    {
-        var key = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]); // ✅ FIXED PATH
-        var claims = new List<Claim>
+        // ✅ SHA256 Password Hashing (Matches SQL Server)
+        private string HashPassword(string password)
         {
-            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
-        };
-
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddHours(2),
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-        };
-
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var token = tokenHandler.CreateToken(tokenDescriptor);
-        return tokenHandler.WriteToken(token);
-    }
-
-    // ✅ SHA256 Password Hashing (Matches SQL Server)
-    private string HashPassword(string password)
-    {
-        using (SHA256 sha256Hash = SHA256.Create())
-        {
-            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return BitConverter.ToString(bytes).Replace("-", "").ToUpper(); // ✅ Matches SQL Server
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(bytes).Replace("-", "").ToUpper(); // ✅ Matches SQL Server
+            }
         }
     }
 }
